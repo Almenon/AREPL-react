@@ -36,7 +36,13 @@ export default class Counter extends Component<Props> {
             <i className="fa fa-minus" />
           </button>
           <button className={styles.btn} onClick={incrementIfOdd} data-tclass="btn">odd</button>
-          <button className={styles.btn} onClick={() => incrementAsync()} data-tclass="btn">async</button>
+          <button
+            className={styles.btn}
+            // incrementAsync wrapped in function to preserve local scope
+            onClick={() => incrementAsync()}
+            data-tclass="btn"
+          >async
+          </button>
         </div>
       </div>
     );

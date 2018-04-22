@@ -2,7 +2,7 @@
 import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../actions/counter';
 
 export type counterStateType = {
-  +counter: number
+  +counter: number // + means read-only
 };
 
 type actionType = {
