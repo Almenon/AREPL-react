@@ -7,20 +7,15 @@ type State = {
 }
 
 export default class PyInput extends Component<Props,State>{
-    constructor(props) {
-      super(props);
-      this.state = {value: '>> input'};
+    props: Props
+    state = {value: '>> input'}
   
-      this.handleChange = this.handleChange.bind(this);
-      this.handleKeyPress = this.handleKeyPress.bind(this);
-    }
-  
-    handleChange(event:any) {
+    handleChange = (event:any) =>{
         //handleChange is not invoked upon enter so no logic here
         this.setState({value: event.target.value});
     }
 
-    handleKeyPress(event:any){
+    handleKeyPress = (event:any)=>{
         if(event.key == "Enter"){
             //send input (this.state.value) over to AREPL-backend
             console.log(this.state.value)
