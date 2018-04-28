@@ -10,12 +10,12 @@ export default class PyInput extends Component<Props,State>{
     props: Props
     state = {value: '>> input'}
   
-    handleChange = (event:any) =>{
+    handleChange = ({target}:SyntheticInputEvent<>) =>{
         //handleChange is not invoked upon enter so no logic here
-        this.setState({value: event.target.value});
+        this.setState({value: target.value});
     }
 
-    handleKeyPress = (event:any)=>{
+    handleKeyPress = (event:SyntheticKeyboardEvent<>)=>{
         if(event.key == "Enter"){
             //send input (this.state.value) over to AREPL-backend
             console.log(this.state.value)
@@ -34,4 +34,5 @@ but flow still didn't like event.target.value :(
 see https://github.com/facebook/flow/issues/368
 
 when first developing this i made mistake of assigning state directly - but that doesnt trigger re-render of component
+i also ran into binding issues ~ see https://medium.freecodecamp.org/react-binding-patterns-5-approaches-for-handling-this-92c651b5af56
 */
