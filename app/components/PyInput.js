@@ -1,7 +1,9 @@
 // @flow
 import React, {Component} from 'react'
 
-type Props = {}
+type Props = {
+    onCode:Function
+}
 type State = {
     value:string
 }
@@ -17,7 +19,9 @@ export default class PyInput extends Component<Props,State>{
 
     handleKeyPress = (event:SyntheticKeyboardEvent<>)=>{
         if(event.key == "Enter"){
-            //send input (this.state.value) over to AREPL-backend
+            //send input (this.state.value) over to AREPL-backend as stdin
+            // for now wiring this to arepl code input for test purposes
+            this.props.onCode({savedCode:"",evalCode:this.state.value})
             console.log(this.state.value)
             this.setState({value: ""});
         }

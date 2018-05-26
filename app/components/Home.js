@@ -5,7 +5,9 @@ import PyInput from './PyInput'
 import Stdout from './Stdout'
 import styles from './Home.css';
 
-type Props = {};
+type Props = {
+  onCode: Function
+};
 
 export default class Home extends Component<Props> {
   props: Props;
@@ -16,7 +18,7 @@ export default class Home extends Component<Props> {
         <div className={styles.container} data-tid="container">
           <h2>Home</h2>
           <Link to="/counter">to Counter</Link>
-          <PyInput></PyInput>
+          <PyInput onCode={this.props.onCode}></PyInput>
           <Stdout></Stdout>
         </div>
       </div>
