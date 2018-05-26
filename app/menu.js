@@ -66,18 +66,12 @@ export default class MenuBuilder {
         { label: 'Select All', accelerator: 'Command+A', selector: 'selectAll:' }
       ]
     };
-    const subMenuViewDev = {
+    const subMenuView = {
       label: 'View',
       submenu: [
         { label: 'Reload', accelerator: 'Command+R', click: () => { this.mainWindow.webContents.reload(); } },
         { label: 'Toggle Full Screen', accelerator: 'Ctrl+Command+F', click: () => { this.mainWindow.setFullScreen(!this.mainWindow.isFullScreen()); } },
         { label: 'Toggle Developer Tools', accelerator: 'Alt+Command+I', click: () => { this.mainWindow.toggleDevTools(); } }
-      ]
-    };
-    const subMenuViewProd = {
-      label: 'View',
-      submenu: [
-        { label: 'Toggle Full Screen', accelerator: 'Ctrl+Command+F', click: () => { this.mainWindow.setFullScreen(!this.mainWindow.isFullScreen()); } }
       ]
     };
     const subMenuWindow = {
@@ -98,10 +92,6 @@ export default class MenuBuilder {
         { label: 'Search Issues', click() { shell.openExternal('https://github.com/atom/electron/issues'); } }
       ]
     };
-
-    const subMenuView = process.env.NODE_ENV === 'development'
-      ? subMenuViewDev
-      : subMenuViewProd;
 
     return [
       subMenuAbout,
@@ -127,7 +117,7 @@ export default class MenuBuilder {
       }]
     }, {
       label: '&View',
-      submenu: (process.env.NODE_ENV === 'development') ? [{
+      submenu: [{
         label: '&Reload',
         accelerator: 'Ctrl+R',
         click: () => {
@@ -145,36 +135,19 @@ export default class MenuBuilder {
         click: () => {
           this.mainWindow.toggleDevTools();
         }
-      }] : [{
-        label: 'Toggle &Full Screen',
-        accelerator: 'F11',
-        click: () => {
-          this.mainWindow.setFullScreen(!this.mainWindow.isFullScreen());
-        }
       }]
     }, {
       label: 'Help',
-      submenu: [{
-        label: 'Learn More',
-        click() {
-          shell.openExternal('http://electron.atom.io');
+      submenu: [
+        {
+          label: 'Github Repository',
+          click () { require('electron').shell.openExternal('https://github.com/Almenon/AREPL') }
+        },
+        {
+          label: 'Search or report a issue',
+          click () { require('electron').shell.openExternal('https://github.com/Almenon/AREPL/issues') }
         }
-      }, {
-        label: 'Documentation',
-        click() {
-          shell.openExternal('https://github.com/atom/electron/tree/master/docs#readme');
-        }
-      }, {
-        label: 'Community Discussions',
-        click() {
-          shell.openExternal('https://discuss.atom.io/c/electron');
-        }
-      }, {
-        label: 'Search Issues',
-        click() {
-          shell.openExternal('https://github.com/atom/electron/issues');
-        }
-      }]
+      ]
     }];
 
     return templateDefault;
