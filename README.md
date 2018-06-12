@@ -1,3 +1,32 @@
+# AREPL: a real-time python scratchpad 
+
+A redo of [AREPL](https://github.com/Almenon/arepl) in react, built from the [electron react boilerplate](https://github.com/chentsulin/electron-react-boilerplate)
+
+I'm experimenting with redoing AREPL for three reasons:
+1. To Refactor messy jquery logic in AREPL into a modern library
+2. To learn react
+3. To take advantage of the feature-rich electron react boilerplate
+
+## Current Status
+
+I have a simple input component linked up to the AREPL-backend through the arepl action.
+
+See issues for next steps.
+
+#### Deveveloper Setup:
+
+1. Install python 3 and npm (if not already installed)
+2. clone this repository
+3. npm install
+5. npm run dev <--- IMPORTANT - do not do npm start, that does production build
+
+The app should now be up and running.
+
+see [AREPL-backend](https://github.com/Almenon/AREPL-backend) for the npm package that executes the python code
+
+
+Below is the electron react boilerplate readme (which AREPL-react is based off of)
+
 # electron-react-boilerplate
 
 ### A Boilerplate for Scalable Cross-Platform Desktop Apps
