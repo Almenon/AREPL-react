@@ -3,6 +3,9 @@ import type { counterStateType } from '../reducers/counter';
 import {PythonEvaluator} from 'arepl-backend'
 
 let myPython = new PythonEvaluator();
+// initially pythonEvalFolderPath is assigned to __dirname before constructor is even called
+// in which case it is just / which mucks things up
+myPython.pythonEvalFolderPath = process.cwd() + "\\node_modules\\arepl-backend\\python"
 myPython.startPython();
 
 type actionType = {
