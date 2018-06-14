@@ -28,7 +28,7 @@ export default class PyInput extends Component<Props,State>{
     }
   
     render() {
-      return <input id="stdin" class="rounded" type="text" value={this.state.value} onChange={this.handleChange} onKeyPress={this.handleKeyPress}/>;
+      return <input id="stdin" type="text" value={this.state.value} onChange={this.handleChange} onKeyPress={this.handleKeyPress}/>;
     }
   }
 
