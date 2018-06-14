@@ -2,10 +2,9 @@
 import React, { Component } from 'react';
 //import { Link } from 'react-router-dom';
 import PyInput from './PyInput'
-import Stdout from './Stdout'
+import Output from './Output'
 import styles from './Home.css';
 import Editor from './Editor';
-import Error from './error';
 
 type Props = {
   onCode: Function
@@ -16,12 +15,13 @@ export default class Home extends Component<Props> {
 
   render() {
     return (
-      <div>
-        <div className={styles.container} data-tid="container">
+      <div style={{display:'flex',flexDirection:'row'}}>
+        <div className={styles.editorGroup}>
           <Editor></Editor>
           <PyInput onCode={this.props.onCode}></PyInput>
-          <Stdout></Stdout>
-          <Error></Error>
+        </div>
+        <div className={styles.output}>
+          <Output></Output>
         </div>
       </div>
     );
