@@ -5,6 +5,7 @@ import PyInput from './PyInput'
 import Stdout from './Stdout'
 import styles from './Home.css';
 import Editor from './Editor';
+import Error from './error';
 
 type Props = {
   onCode: Function
@@ -20,6 +21,7 @@ export default class Home extends Component<Props> {
           <Editor></Editor>
           <PyInput onCode={this.props.onCode}></PyInput>
           <Stdout></Stdout>
+          <Error></Error>
         </div>
       </div>
     );
