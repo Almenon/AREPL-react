@@ -10,7 +10,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onCode: code => dispatch(executeCode(code))
+    onCode: code => dispatch(executeCode(code)),
+    onInput: input => console.log(input)
   }
 }
 

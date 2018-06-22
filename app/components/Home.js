@@ -7,7 +7,8 @@ import styles from './Home.css';
 import Editor from './Editor';
 
 type Props = {
-  onCode: Function
+  onCode: Function,
+  onInput: Function
 };
 
 export default class Home extends Component<Props> {
@@ -17,8 +18,8 @@ export default class Home extends Component<Props> {
     return (
       <div style={{display:'flex',flexDirection:'row'}}>
         <div className={styles.editorGroup}>
-          <Editor></Editor>
-          <PyInput onCode={this.props.onCode}></PyInput>
+          <Editor onCode={this.props.onCode}></Editor>
+          <PyInput onInput={this.props.onInput}></PyInput>
         </div>
         <div className={styles.output}>
           <Output></Output>
