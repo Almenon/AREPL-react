@@ -9,7 +9,8 @@ type Props = {
         errMessage: string,
         execTime: string,
         totalTime: string
-    }
+    },
+    printResult:string
 }
 
 export default class Output extends Component<Props>{
@@ -19,7 +20,7 @@ export default class Output extends Component<Props>{
         return <div>
             <Error errorMessage={this.props.output.errMessage}></Error>
             <VariableView vars={this.props.output.vars}></VariableView>
-            <Stdout></Stdout>
+            <Stdout newLine={this.props.printResult}></Stdout>
         </div>
     }
 }

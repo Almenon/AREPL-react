@@ -17,7 +17,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       errMessage: "testing error message\nexample stacktrace",
       execTime: 0,
       totalTime:0
-    }
+    },
+    printResult: "mock print"
   }
 }
 
