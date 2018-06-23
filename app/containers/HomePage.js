@@ -11,7 +11,13 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onCode: code => dispatch(executeCode(code)),
-    onInput: input => console.log(input)
+    onInput: input => console.log(input),
+    output: {
+      vars: {'a':1,'b':"yo",'c':{'a':1},'d':[1,2,3,4]},
+      errMessage: "testing error message\nexample stacktrace",
+      execTime: 0,
+      totalTime:0
+    }
   }
 }
 

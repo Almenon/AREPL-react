@@ -8,7 +8,8 @@ import Editor from './Editor';
 
 type Props = {
   onCode: Function,
-  onInput: Function
+  onInput: Function,
+  output: Object
 };
 
 export default class Home extends Component<Props> {
@@ -22,7 +23,7 @@ export default class Home extends Component<Props> {
           <PyInput onInput={this.props.onInput}></PyInput>
         </div>
         <div className={styles.output}>
-          <Output></Output>
+          <Output output={this.props.output}></Output>
         </div>
       </div>
     );
