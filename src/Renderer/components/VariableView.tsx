@@ -1,6 +1,6 @@
-import React, {Component} from 'React'
+import * as React from 'React'
 
-export default class VariableView extends Component<Props>{
+export default class VariableView extends React.Component<Props>{
     props: Props;
 
     render(){

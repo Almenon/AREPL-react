@@ -1,4 +1,4 @@
-import React, {Component} from 'React'
+import * as React from 'React'
 import Error from './Error'
 import VariableView from './VariableView'
 import Stdout from './Stdout'
@@ -13,7 +13,7 @@ type Props = {
     printResult:string
 }
 
-export default class Output extends Component<Props>{
+export default class Output extends React.Component<Props>{
     props: Props;
 
     render(){

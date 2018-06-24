@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from 'react';
+import * as React from 'react';
 // import { Link } from 'react-router-dom';
 import PyInput from './PyInput'
 import Output from './Output'
@@ -13,7 +13,7 @@ type Props = {
   printResult: string
 };
 
-export default class Home extends Component<Props> {
+export default class Home extends React.Component<Props> {
   props: Props;
 
   render() {

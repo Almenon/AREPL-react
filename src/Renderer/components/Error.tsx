@@ -1,6 +1,6 @@
-import React, {Component} from 'React'
+import * as React from 'React'
 
-export default class Error extends Component<Props>{
+export default class Error extends React.Component<Props>{
     props: Props;
 
     render(){

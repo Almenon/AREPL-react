@@ -1,5 +1,5 @@
 // @flow
-import React, {Component} from 'react'
+import * as React from 'React'
 
 type Props = {
     onInput:Function
@@ -8,7 +8,7 @@ type State = {
     value:string
 }
 
-export default class PyInput extends Component<Props,State>{
+export default class PyInput extends React.Component<Props,State>{
     props: Props
     state = {value: '>> input'}
   

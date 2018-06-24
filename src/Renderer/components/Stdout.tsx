@@ -1,11 +1,11 @@
 // @flow
-import React, {Component} from 'react'
+import * as React from 'React'
 
 type Props = {
     newLine:string
 }
 
-export default class Stdout extends Component<Props,State>{
+export default class Stdout extends React.Component<Props,State>{
     props: Props
     newLines = [""]
 

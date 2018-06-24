@@ -1,10 +1,10 @@
-import React, {Component} from 'React'
+import * as React from 'React'
 
 type Props = {
     onCode:Function
 }
 
-export default class Editor extends Component<Props>{
+export default class Editor extends React.Component<Props>{
     props: Props;
 
     handleChange = (event:SyntheticKeyboardEvent<>) => {
