@@ -1,28 +1,29 @@
-// @flow
-import type { counterStateType } from '../reducers/counter';
+import { RootState } from "@red/index";
 
-type actionType = {
-  +type: string
-};
+export type counterActions = increment | decrement;
 
-export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
-export const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
-
-export function increment() {
-  return {
-    type: INCREMENT_COUNTER
-  };
+interface increment {
+  type: string;
 }
 
-export function decrement() {
-  return {
-    type: DECREMENT_COUNTER
-  };
+interface decrement {
+  type: string;
 }
 
-export function incrementIfOdd() {
-  return (dispatch: (action: actionType) => void, getState: () => counterStateType) => {
-    const { counter } = getState();
+const increment = () => ({
+  type: "INCREMENT_COUNTER"
+});
+
+const decrement = () => ({
+  type: "DECREMENT_COUNTER"
+});
+
+const incrementIfOdd = () => {
+  return (
+    dispatch: (action: counterActions) => void,
+    getState: () => RootState
+  ) => {
+    const { counter } = getState().counter;
 
     if (counter % 2 === 0) {
       return;
@@ -32,10 +33,17 @@ export function incrementIfOdd() {
   };
 }
 
-export function incrementAsync(delay: number = 1000) {
-  return (dispatch: (action: actionType) => void) => {
+const incrementAsync = (delay: number = 1000) => {
+  return (dispatch: (action: counterActions) => void) => {
     setTimeout(() => {
       dispatch(increment());
     }, delay);
   };
-}
+};
+
+export const actionCreators = {
+  increment,
+  decrement,
+  incrementIfOdd,
+  incrementAsync
+};
