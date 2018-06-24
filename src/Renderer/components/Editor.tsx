@@ -7,8 +7,9 @@ type Props = {
 export default class Editor extends React.Component<Props>{
     props: Props;
 
-    handleChange = (event:SyntheticKeyboardEvent<>) => {
-        this.props.onCode({savedCode:"",evalCode:event.target.value})
+    handleChange = (event:any) => {
+        const text:string = event.target.value
+        this.props.onCode({savedCode:"",evalCode:text})
     }
 
     render(){
