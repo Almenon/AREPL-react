@@ -24,7 +24,7 @@ export default class MenuBuilder {
   }
 
   setupDevelopmentEnvironment() {
-    this.mainWindow.openDevTools();
+    this.mainWindow.webContents.openDevTools();
     this.mainWindow.webContents.on('context-menu', (e, props) => {
       const { x, y } = props;
 
@@ -32,7 +32,7 @@ export default class MenuBuilder {
         .buildFromTemplate([{
           label: 'Inspect element',
           click: () => {
-            this.mainWindow.inspectElement(x, y);
+            this.mainWindow.webContents.inspectElement(x, y);
           }
         }])
         .popup(this.mainWindow);
@@ -40,7 +40,11 @@ export default class MenuBuilder {
   }
 
   buildDarwinTemplate() {
-    const subMenuAbout = {
+
+    // selector is a darwin only attribute
+    // hence the need to cast to MenItemConsructorOptions
+
+    const subMenuAbout = <Electron.MenuItemConstructorOptions>{
       label: 'Electron',
       submenu: [
         { label: 'About ElectronReact', selector: 'orderFrontStandardAboutPanel:' },
@@ -54,7 +58,7 @@ export default class MenuBuilder {
         { label: 'Quit', accelerator: 'Command+Q', click: () => { app.quit(); } }
       ]
     };
-    const subMenuEdit = {
+    const subMenuEdit = <Electron.MenuItemConstructorOptions>{
       label: 'Edit',
       submenu: [
         { label: 'Undo', accelerator: 'Command+Z', selector: 'undo:' },
@@ -66,15 +70,15 @@ export default class MenuBuilder {
         { label: 'Select All', accelerator: 'Command+A', selector: 'selectAll:' }
       ]
     };
-    const subMenuView = {
+    const subMenuView = <Electron.MenuItemConstructorOptions>{
       label: 'View',
       submenu: [
         { label: 'Reload', accelerator: 'Command+R', click: () => { this.mainWindow.webContents.reload(); } },
         { label: 'Toggle Full Screen', accelerator: 'Ctrl+Command+F', click: () => { this.mainWindow.setFullScreen(!this.mainWindow.isFullScreen()); } },
-        { label: 'Toggle Developer Tools', accelerator: 'Alt+Command+I', click: () => { this.mainWindow.toggleDevTools(); } }
+        { label: 'Toggle Developer Tools', accelerator: 'Alt+Command+I', click: () => { this.mainWindow.webContents.toggleDevTools(); } }
       ]
     };
-    const subMenuWindow = {
+    const subMenuWindow = <Electron.MenuItemConstructorOptions>{
       label: 'Window',
       submenu: [
         { label: 'Minimize', accelerator: 'Command+M', selector: 'performMiniaturize:' },
@@ -83,7 +87,7 @@ export default class MenuBuilder {
         { label: 'Bring All to Front', selector: 'arrangeInFront:' }
       ]
     };
-    const subMenuHelp = {
+    const subMenuHelp = <Electron.MenuItemConstructorOptions>{
       label: 'Help',
       submenu: [
         { label: 'Learn More', click() { shell.openExternal('http://electron.atom.io'); } },
@@ -103,7 +107,7 @@ export default class MenuBuilder {
   }
 
   buildDefaultTemplate() {
-    const templateDefault = [{
+    const templateDefault:Electron.MenuItemConstructorOptions[] = [{
       label: '&File',
       submenu: [{
         label: '&Open',
@@ -133,7 +137,7 @@ export default class MenuBuilder {
         label: 'Toggle &Developer Tools',
         accelerator: 'Alt+Ctrl+I',
         click: () => {
-          this.mainWindow.toggleDevTools();
+          this.mainWindow.webContents.toggleDevTools();
         }
       }]
     }, {
