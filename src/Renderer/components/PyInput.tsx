@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'React'
 
 type Props = {
@@ -9,7 +8,6 @@ type State = {
 }
 
 export default class PyInput extends React.Component<Props,State>{
-    props: Props
     state = {value: '>> input'}
   
     handleChange = (event:any) =>{
@@ -18,7 +16,7 @@ export default class PyInput extends React.Component<Props,State>{
         this.setState({value: text});
     }
 
-    handleKeyPress = (event:KeyboardEvent)=>{
+    handleKeyPress = (event:React.KeyboardEvent<HTMLInputElement>)=>{
         if(event.key === "Enter"){
             this.props.onInput(this.state.value)
             this.setState({value: ""});
