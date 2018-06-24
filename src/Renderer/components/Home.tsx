@@ -9,12 +9,16 @@ import Editor from './Editor';
 type Props = {
   onCode: Function,
   onInput: Function,
-  output: Object,
+  output:{
+    vars: {},
+    errMessage: string,
+    execTime: string,
+    totalTime: string
+  },
   printResult: string
 };
 
 export default class Home extends React.Component<Props> {
-  props: Props;
 
   render() {
     return (
