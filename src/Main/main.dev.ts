@@ -1,5 +1,3 @@
-/* eslint global-require: 0, flowtype-errors/show-errors: 0 */
-
 /**
  * This module executes inside of electron's main process. You can start
  * electron renderer process from here and communicate with the other processes
@@ -11,9 +9,10 @@
  * @flow
  */
 import { app, BrowserWindow } from 'electron';
-import MenuBuilder from './menu';
+import * as path from 'path';
+import { default as MenuBuilder } from '@utils/menu';
 
-let mainWindow = null;
+let mainWindow: BrowserWindow | null = null;
 
 if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support');
@@ -23,7 +22,7 @@ if (process.env.NODE_ENV === 'production') {
 if (process.env.NODE_ENV === 'development' || process.env.DEBUG_PROD === 'true') {
   require('electron-debug')();
   const path = require('path');
-  const p = path.join(__dirname, '..', 'app', 'node_modules');
+  const p = path.join(__dirname, '..', 'node_modules');
   require('module').globalPaths.push(p);
 }
 
@@ -65,19 +64,25 @@ app.on('ready', async () => {
     height: 728
   });
 
-  mainWindow.loadURL(`file://${__dirname}/app.html`);
+  if (process.env.NODE_ENV === 'development') {
+    mainWindow!.loadURL(
+      `file://${path.resolve(__dirname, '..', 'Renderer')}/app.html`
+    );
+  } else {
+    mainWindow.loadURL(`file://${__dirname}/app.html`);
+  }
 
   // @TODO: Use 'ready-to-show' event
   //        https://github.com/electron/electron/blob/master/docs/api/browser-window.md#using-ready-to-show-event
-  mainWindow.webContents.on('did-finish-load', () => {
+  mainWindow!.webContents.on('did-finish-load', () => {
     if (!mainWindow) {
-      throw new Error('"mainWindow" is not defined');
+      throw new Error('mainWindow is not defined');
     }
     mainWindow.show();
     mainWindow.focus();
   });
 
-  mainWindow.on('closed', () => {
+  mainWindow!.on('closed', () => {
     mainWindow = null;
   });
 
