@@ -3,7 +3,7 @@ import * as React from 'react';
 // import { Link } from 'react-router-dom';
 import PyInput from './PyInput'
 import Output from './Output'
-import styles from './Home.css';
+const styles  = require('./Home.css');
 import Editor from './Editor';
 
 type Props = {
