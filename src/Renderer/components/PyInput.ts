@@ -13,12 +13,12 @@ export default class PyInput extends Component<Props,State>{
     state = {value: '>> input'}
   
     handleChange = ({target}:SyntheticInputEvent<>) =>{
-        //handleChange is not invoked upon enter so no logic here
+        // handleChange is not invoked upon enter so no logic here
         this.setState({value: target.value});
     }
 
     handleKeyPress = (event:SyntheticKeyboardEvent<>)=>{
-        if(event.key == "Enter"){
+        if(event.key === "Enter"){
             this.props.onInput(this.state.value)
             this.setState({value: ""});
         }

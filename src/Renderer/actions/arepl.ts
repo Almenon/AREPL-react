@@ -2,7 +2,7 @@
 import type { counterStateType } from '../reducers/counter';
 import {PythonEvaluator} from 'arepl-backend'
 
-let myPython = new PythonEvaluator();
+const myPython = new PythonEvaluator();
 // initially pythonEvalFolderPath is assigned to __dirname before constructor is even called
 // in which case it is just / which mucks things up
 myPython.pythonEvalFolderPath = process.cwd() + "\\node_modules\\arepl-backend\\python"
@@ -17,8 +17,8 @@ export const EXECUTION_COMPLETE = 'EXECUTION_COMPLETE';
 
 export function printResult(printLine:string) {
   return {
-    type: PRINT_RESULT,
-    printLine:printLine
+    "type": PRINT_RESULT,
+    "printLine":printLine
   };
 }
 
