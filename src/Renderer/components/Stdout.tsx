@@ -5,8 +5,7 @@ type Props = {
     newLine:string
 }
 
-export default class Stdout extends React.Component<Props,State>{
-    props: Props
+export default class Stdout extends React.Component<Props>{
     newLines = [""]
 
     clear(){

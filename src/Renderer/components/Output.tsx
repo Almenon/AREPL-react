@@ -14,7 +14,6 @@ type Props = {
 }
 
 export default class Output extends React.Component<Props>{
-    props: Props;
 
     render(){
         return <div>
