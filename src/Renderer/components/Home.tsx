@@ -20,11 +20,11 @@ export default class Home extends React.Component<Props> {
     return (
       <div style={{display:'flex',flexDirection:'row'}}>
         <div className={styles.editorGroup}>
-          <Editor onCode={this.props.onCode}></Editor>
-          <PyInput onInput={this.props.onInput}></PyInput>
+          <Editor onCode={this.props.onCode}/>
+          <PyInput onInput={this.props.onInput}/>
         </div>
         <div className={styles.output}>
-          <Output output={this.props.output} printResult={this.props.printResult}></Output>
+          <Output output={this.props.output} printResult={this.props.printResult}/>
         </div>
       </div>
     );

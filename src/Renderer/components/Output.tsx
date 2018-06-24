@@ -18,9 +18,9 @@ export default class Output extends React.Component<Props>{
 
     render(){
         return <div>
-            <Error errorMessage={this.props.output.errMessage}></Error>
-            <VariableView vars={this.props.output.vars}></VariableView>
-            <Stdout newLine={this.props.printResult}></Stdout>
+            <Error errorMessage={this.props.output.errMessage}/>
+            <VariableView vars={this.props.output.vars}/>
+            <Stdout newLine={this.props.printResult}/>
         </div>
     }
 }
