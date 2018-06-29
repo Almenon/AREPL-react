@@ -1,6 +1,6 @@
 # AREPL: a real-time python scratchpad 
 
-A redo of [AREPL](https://github.com/Almenon/arepl) in react, built from the [electron react boilerplate](https://github.com/chentsulin/electron-react-boilerplate)
+A redo of [AREPL](https://github.com/Almenon/arepl) in react, built from the [electron react](https://github.com/chentsulin/electron-react-boilerplate) and [typescript](https://github.com/ManuKle/electron-react-typescript-boilerplate) boilerplate
 
 I'm experimenting with redoing AREPL for three reasons:
 1. To Refactor messy jquery logic in AREPL into a modern library
