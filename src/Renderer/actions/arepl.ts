@@ -22,7 +22,6 @@ export function printResult(printLine:string) {
   };
 }
 
-// flow SHOULD have picked up on result type from arepl but is acting wierd
 export function executionComplete(result: any) {
   result['type'] = EXECUTION_COMPLETE;
   return result;
