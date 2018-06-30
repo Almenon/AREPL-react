@@ -29,15 +29,15 @@ export function executionComplete(result: any) {
 
 export function executeCode(code: {savedCode:string,evalCode:string}) {
     return (dispatch: (action: actionType) => void) => {
-        
-      myPython.onPrint = (printLine)=>{
-        dispatch(printResult(printLine));
-      }
-      myPython.onResult = (result)=>{
-          dispatch(executionComplete(result));
-      }
-
-      myPython.execCode(code);
-      
+      myPython.debounce(()=>{
+        myPython.onPrint = (printLine)=>{
+          dispatch(printResult(printLine));
+        }
+        myPython.onResult = (result)=>{
+            dispatch(executionComplete(result));
+        }
+  
+        myPython.execCode(code);
+      }, 300)
     };
 }
