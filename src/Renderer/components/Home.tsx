@@ -9,13 +9,6 @@ import Editor from './Editor';
 type Props = {
   onCode: Function,
   onInput: Function,
-  output:{
-    vars: {},
-    errMessage: string,
-    execTime: string,
-    totalTime: string
-  },
-  printResult: string
 };
 
 export default class Home extends React.Component<Props> {
@@ -28,7 +21,7 @@ export default class Home extends React.Component<Props> {
           <PyInput onInput={this.props.onInput}/>
         </div>
         <div className={styles.output}>
-          <Output output={this.props.output} printResult={this.props.printResult}/>
+          <Output/>
         </div>
       </div>
     );
