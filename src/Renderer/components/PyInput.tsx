@@ -29,10 +29,6 @@ export default class PyInput extends React.Component<Props,State>{
   }
 
 /* NOTES
-tried typing event with SyntheticKeyboardEvent<HTMLInputElement>
-but flow still didn't like event.target.value :(
-see https://github.com/facebook/flow/issues/368
-
 when first developing this i made mistake of assigning state directly - but that doesnt trigger re-render of component
 i also ran into binding issues ~ see https://medium.freecodecamp.org/react-binding-patterns-5-approaches-for-handling-this-92c651b5af56
 */
