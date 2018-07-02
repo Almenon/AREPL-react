@@ -9,9 +9,7 @@ I'm experimenting with redoing AREPL for three reasons:
 
 ## Current Status
 
-I have a simple input component linked up to the AREPL-backend through the arepl action.
-
-See issues for next steps.
+App is very barebones but functional. A texteditor dispatches an action that gets debounced into arepl-backend.  Eventually output is returned which is reduced into state.
 
 #### Deveveloper Setup:
 
