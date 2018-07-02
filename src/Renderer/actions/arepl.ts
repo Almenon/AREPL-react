@@ -1,4 +1,3 @@
-// @flow
 import {PythonEvaluator} from 'arepl-backend'
 
 const myPython = new PythonEvaluator();
