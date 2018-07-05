@@ -11,11 +11,11 @@ interface decrement {
 }
 
 const increment = () => ({
-  type: "INCREMENT_COUNTER"
+  type: actions.INCREMENT_COUNTER
 });
 
 const decrement = () => ({
-  type: "DECREMENT_COUNTER"
+  type: actions.DECREMENT_COUNTER
 });
 
 const incrementIfOdd = () => {
@@ -40,6 +40,11 @@ const incrementAsync = (delay: number = 1000) => {
     }, delay);
   };
 };
+
+export const actions = {
+  INCREMENT_COUNTER: "INCREMENT_COUNTER",
+  DECREMENT_COUNTER: "DECREMENT_COUNTER"
+}
 
 export const actionCreators = {
   increment,

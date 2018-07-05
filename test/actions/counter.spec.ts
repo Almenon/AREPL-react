@@ -1,17 +1,17 @@
 import { spy } from 'sinon';
-import * as actions from '../../app/actions/counter';
+import { actionCreators, actions} from '../../src/Renderer/actions/counter';
 
 describe('actions', () => {
   it('should increment should create increment action', () => {
-    expect(actions.increment()).toMatchSnapshot();
+    expect(actionCreators.increment()).toMatchSnapshot();
   });
 
   it('should decrement should create decrement action', () => {
-    expect(actions.decrement()).toMatchSnapshot();
+    expect(actionCreators.decrement()).toMatchSnapshot();
   });
 
   it('should incrementIfOdd should create increment action', () => {
-    const fn = actions.incrementIfOdd();
+    const fn = actionCreators.incrementIfOdd();
     expect(fn).toBeInstanceOf(Function);
     const dispatch = spy();
     const getState = () => ({ counter: 1 });
@@ -20,16 +20,16 @@ describe('actions', () => {
   });
 
   it('should incrementIfOdd shouldnt create increment action if counter is even', () => {
-    const fn = actions.incrementIfOdd();
+    const fn = actionCreators.incrementIfOdd();
     const dispatch = spy();
-    const getState = () => ({ counter: 2 });
+    const getState = () => ({counter: { counter: 2 }});
     fn(dispatch, getState);
     expect(dispatch.called).toBe(false);
   });
 
   // There's no nice way to test this at the moment...
   it('should incrementAsync', done => {
-    const fn = actions.incrementAsync(1);
+    const fn = actionCreators.incrementAsync(1);
     expect(fn).toBeInstanceOf(Function);
     const dispatch = spy();
     fn(dispatch);
