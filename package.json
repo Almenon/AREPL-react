@@ -21,7 +21,11 @@
     "start-renderer-dev": "cross-env NODE_ENV=development node -r ts-node/register -r tsconfig-paths/register ./node_modules/webpack-dev-server/bin/webpack-dev-server --config src/webpack.config.renderer.dev.ts",
     "installer": "npm run package && node -r ts-node/register -r tsconfig-paths/register src/Main/utils/build.ts",
     "debug_prod": "cross-env DEBUG_PROD=true npm start",
-    "analyze-build": "cross-env OPEN_ANALYZER=true npm run build"
+    "analyze-build": "cross-env OPEN_ANALYZER=true npm run build",
+    "test": "cross-env NODE_ENV=test BABEL_DISABLE_CACHE=1 node --trace-warnings -r ts-node/register ./src/scripts/RunTests.ts",
+    "test-all": "npm run build && npm run test && npm run test-e2e",
+    "test-e2e": "cross-env NODE_ENV=test BABEL_DISABLE_CACHE=1 node --trace-warnings -r ts-node/register ./src/scripts/RunTests.ts e2e",
+    "test-watch": "npm test -- --watch"
   },
   "browserslist": "electron 1.6",
   "build": {
@@ -106,6 +110,7 @@
   },
   "devDependencies": {
     "@types/copy-webpack-plugin": "^4.0.1",
+    "@types/cross-spawn": "^6.0.0",
     "@types/detect-port": "^1.1.0",
     "@types/electron-debug": "^1.1.0",
     "@types/enzyme": "^3.1.4",
