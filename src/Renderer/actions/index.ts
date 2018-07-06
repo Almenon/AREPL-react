@@ -1,3 +1,3 @@
-import { counterActions } from "@act/counter";
+import { counterActions } from "../actions/counter";
 
 export type RootActions = counterActions;

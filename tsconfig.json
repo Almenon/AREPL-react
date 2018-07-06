@@ -18,13 +18,6 @@
     "sourceMap": true,
     "lib": ["dom", "es2016", "es7"],
     "baseUrl": ".",
-    "paths": {
-      "@act/*": ["src/Renderer/actions/*"],
-      "@con/*": ["src/Renderer/containers/*"],
-      "@com/*": ["src/Renderer/components/*"],
-      "@red/*": ["src/Renderer/reducers/*"],
-      "@utils/*": ["src/Main/utils/*"]
-    },
     "rootDir": "src",
     "outDir": "app",
     "noEmitOnError": false,

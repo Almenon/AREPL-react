@@ -1,4 +1,4 @@
-import { RootState } from "@red/index";
+import { RootState } from "../reducers/index";
 
 export type counterActions = increment | decrement;
 

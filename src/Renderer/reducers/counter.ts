@@ -1,4 +1,4 @@
-import { RootActions } from '@act/index';
+import { RootActions } from '../actions/index';
 
 export interface counterState {
   counter: number;

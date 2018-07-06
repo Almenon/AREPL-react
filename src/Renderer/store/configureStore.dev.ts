@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import { createHashHistory } from 'history';
 import { routerMiddleware, routerActions } from 'react-router-redux';
 import { createLogger } from 'redux-logger';
-import { rootReducer, RootState } from '@red/index';
+import { rootReducer, RootState } from '../reducers/index';
 
 interface DebugWindow extends Window {
   __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: (args: any) => any;

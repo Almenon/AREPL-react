@@ -3,7 +3,7 @@ import Error from './Error'
 import VariableView from './VariableView'
 import Stdout from './Stdout'
 import { connect } from 'react-redux';
-import { RootState } from '@red/index';
+import { RootState } from '../reducers/index';
 
 type Props = {
     output:{ERROR:string, userVariables:Object, execTime:number, totalPyTime:number, totalTime:number},

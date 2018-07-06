@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { routerReducer, RouterState } from 'react-router-redux';
-import { counterReducer, counterState } from '@red/counter';
-import areplReducer, { areplState } from '@red/arepl';
+import { counterReducer, counterState } from './counter';
+import areplReducer, { areplState } from './arepl';
 
 export interface RootState {
   counter: counterState;
