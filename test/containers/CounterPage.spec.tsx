@@ -1,15 +1,13 @@
-import React from 'react';
+import * as React from 'react';
 import Enzyme, { mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
 import { ConnectedRouter } from 'react-router-redux';
-import CounterPage from '../../app/containers/CounterPage';
-import { configureStore } from '../../app/store/configureStore';
+import CounterPage from '../../src/Renderer/containers/CounterPage';
+const { configureStore } = require('../../src/Renderer/store/configureStore')
 
-Enzyme.configure({ adapter: new Adapter() });
 
-function setup(initialState) {
+function setup(initialState?) {
   const store = configureStore(initialState);
   const history = createBrowserHistory();
   const provider = (
@@ -53,7 +51,7 @@ describe('containers', () => {
     });
 
     it('should change if odd and if odd button clicked', () => {
-      const { buttons, p } = setup({ counter: 1 });
+      const { buttons, p } = setup({counter: { counter: 1 }});
       buttons.at(2).simulate('click');
       expect(p.text()).toMatch(/^2$/);
     });
