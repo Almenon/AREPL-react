@@ -8,9 +8,10 @@ const delay = time => new Promise(resolve => setTimeout(resolve, time));
 
 describe('main window', function spec() {
   beforeAll(async () => {
+    // @ts-ignore because electronPath is typeof Electron, and a string is required
     this.app = new Application({
       path: electronPath,
-      args: [path.join(__dirname, '..', '..', 'app')],
+      args: [path.join(__dirname, '..', '..', 'src')],
     });
 
     return this.app.start();
