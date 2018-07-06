@@ -1,8 +1,8 @@
 {
-  "name": "electron-react-boilerplate",
-  "productName": "ElectronReact",
+  "name": "arepl-react",
+  "productName": "AreplReact",
   "version": "0.13.2",
-  "description": "Electron application boilerplate based on React, React Router, Webpack, React Hot Loader for rapid application development",
+  "description": "Redo of AREPL in react",
   "scripts": {
     "build": "concurrently \"npm run build-main\" \"npm run build-renderer\"",
     "build-dll": "cross-env NODE_ENV=development process.env.TS_NODE_DISABLE_WARNINGS=true node --max-old-space-size=4096 -r ts-node/register -r tsconfig-paths/register ./node_modules/webpack/bin/webpack --config src/webpack.config.renderer.dev.dll.ts --progress --profile --colors --display-error-details",
@@ -29,8 +29,8 @@
   },
   "browserslist": "electron 1.6",
   "build": {
-    "productName": "ElectronReact",
-    "appId": "org.develar.ElectronReact",
+    "productName": "AreplReact",
+    "appId": "org.develar.AreplReact",
     "files": [
       "dist/",
       "node_modules/",
