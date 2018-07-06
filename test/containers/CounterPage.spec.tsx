@@ -4,11 +4,11 @@ import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
 import { ConnectedRouter } from 'react-router-redux';
 import CounterPage from '../../src/Renderer/containers/CounterPage';
-const { configureStore } = require('../../src/Renderer/store/configureStore')
+import configureStore from '../../src/Renderer/store/configureStore.dev'
 
 
 function setup(initialState?) {
-  const store = configureStore(initialState);
+  const store = configureStore.configureStore(initialState);
   const history = createBrowserHistory();
   const provider = (
     <Provider store={store}>
