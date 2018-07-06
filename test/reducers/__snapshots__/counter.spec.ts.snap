@@ -2,13 +2,13 @@
 
 exports[`reducers counterReducer should handle DECREMENT_COUNTER 1`] = `
 Object {
-  "counter": NaN,
+  "counter": 0,
 }
 `;
 
 exports[`reducers counterReducer should handle INCREMENT_COUNTER 1`] = `
 Object {
-  "counter": NaN,
+  "counter": 2,
 }
 `;
 
@@ -18,4 +18,8 @@ Object {
 }
 `;
 
-exports[`reducers counterReducer should handle unknown action type 1`] = `1`;
+exports[`reducers counterReducer should handle unknown action type 1`] = `
+Object {
+  "counter": 1,
+}
+`;
