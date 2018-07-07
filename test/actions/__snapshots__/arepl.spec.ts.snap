@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`arepl actions should evaluate simple python code 1`] = `
+Object {
+  "ERROR": "",
+  "execTime": 0,
+  "totalPyTime": 0,
+  "totalTime": 0,
+  "type": "EXECUTION_COMPLETE",
+  "userVariables": Object {
+    "x": 2,
+  },
+}
+`;
