@@ -10,7 +10,7 @@
  */
 import { app, BrowserWindow } from 'electron';
 import * as path from 'path';
-import { default as MenuBuilder } from '@utils/menu';
+import { default as MenuBuilder } from './utils/menu';
 
 let mainWindow: BrowserWindow | null = null;
 
