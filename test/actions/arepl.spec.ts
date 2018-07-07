@@ -18,4 +18,7 @@ describe('arepl actions', () => {
 
         codeExecutor(dispatch)
     })
+
+    // we could test countless more scenarios of python code here
+    // but that is all tested in arepl-backend
 })
