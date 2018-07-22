@@ -24,7 +24,7 @@ export default class PyInput extends React.Component<Props,State>{
     }
   
     render() {
-      return <input style={{display:"inherit"}} id="stdin" type="text" value={this.state.value} onChange={this.handleChange} onKeyPress={this.handleKeyPress}/>;
+      return <input style={{display:"inherit", width:"402px"}} id="stdin" type="text" value={this.state.value} onChange={this.handleChange} onKeyPress={this.handleKeyPress}/>;
     }
   }
 
