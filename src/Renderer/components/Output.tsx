@@ -24,7 +24,7 @@ export class Output extends React.Component<Props>{
 function mapStateToProps(state: RootState) {
     return {
         output: state.arepl,
-        printResult: "hardcoding print result for now"
+        printResult: ""
     }
   }
   
