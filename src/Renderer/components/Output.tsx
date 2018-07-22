@@ -15,7 +15,7 @@ export class Output extends React.Component<Props>{
     render(){
         return <div>
             <Error errorMessage={this.props.output.ERROR}/>
-            <ReactJson src={this.props.output.userVariables}/>
+            <ReactJson src={this.props.output.userVariables} collapseStringsAfterLength={90} displayDataTypes={false} name={false} enableClipboard={false} collapsed={2} style={{fontSize:"16px"}}/>
             <Stdout newLine={this.props.printResult}/>
         </div>
     }
