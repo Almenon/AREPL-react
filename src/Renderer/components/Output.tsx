@@ -1,9 +1,9 @@
 import * as React from 'React'
 import Error from './Error'
-import VariableView from './VariableView'
 import Stdout from './Stdout'
 import { connect } from 'react-redux';
 import { RootState } from '@red/index';
+import ReactJson from 'react-json-view'
 
 type Props = {
     output:{ERROR:string, userVariables:Object, execTime:number, totalPyTime:number, totalTime:number},
@@ -15,7 +15,7 @@ export class Output extends React.Component<Props>{
     render(){
         return <div>
             <Error errorMessage={this.props.output.ERROR}/>
-            <VariableView vars={this.props.output.userVariables}/>
+            <ReactJson src={this.props.output.userVariables}/>
             <Stdout newLine={this.props.printResult}/>
         </div>
     }
