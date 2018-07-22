@@ -37,6 +37,6 @@ export function executeCode(code: {savedCode:string,evalCode:string}) {
         }
   
         myPython.execCode(code);
-      }, 300)
+      }, 400)
     };
 }
