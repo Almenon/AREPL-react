@@ -5,7 +5,7 @@ interface Props{
 }
 
 function Error({errorMessage}:Props){
-    return <div style={{width:'200px',height:'200px',color:'red'}}>{errorMessage}</div>
+    return <div style={{width:'200px', color:'red'}}>{errorMessage}</div>
 }
 
 export default Error
