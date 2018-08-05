@@ -26,7 +26,7 @@ export function executionComplete(result: any) {
   return result;
 }
 
-export function executeCode(code: {savedCode:string,evalCode:string}) {
+export function executeCode(code: {savedCode:string,evalCode:string, filePath:string}) {
     return (dispatch: (action: actionType) => void) => {
       myPython.debounce(()=>{
         myPython.onPrint = (printLine)=>{

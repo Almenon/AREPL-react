@@ -438,9 +438,9 @@ are-we-there-yet@~1.1.2:
     delegates "^1.0.0"
     readable-stream "^2.0.6"
 
-arepl-backend@^1.0.0-beta.2:
-  version "1.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/arepl-backend/-/arepl-backend-1.0.0-beta.2.tgz#d73ca35f4d9c584ba0604e794b54317943523348"
+arepl-backend@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/arepl-backend/-/arepl-backend-1.0.0-beta.6.tgz#fbf9c73fcc5e740e4466e4473e2aac6473a9106b"
   dependencies:
     python-shell "^0.5.0"
 
