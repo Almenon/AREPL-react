@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage should output vars when user types in editor 1`] = `
+<VariableView
+  vars={Object {}}
+>
+  <div
+    style={
+      Object {
+        "height": "200px",
+        "width": "200px",
+      }
+    }
+  >
+    {}
+  </div>
+</VariableView>
+`;
+
+exports[`HomePage should output vars when user types in editor 2`] = `Object {}`;
